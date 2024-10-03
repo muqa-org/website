@@ -6,18 +6,18 @@ import NavigationLink from '@/app/components/navigation/NavigationLink';
 
 export const Navigation = () => {
 	return (
-		<nav className='py-4'>
+		<nav className='py-8'>
 			<Container>
 				<div className='flex items-center justify-between'>
 					<Link href='/'>
 						<Image src='/images/logo.svg' width={58} height={46} alt='logo' />
 					</Link>
-					<ul className='flex items-center gap-8'>
-						<li>
-							<NavigationLink href='/'>Home</NavigationLink>
-						</li>
+					<ul className='flex items-center gap-8 ml-20'>
 						<li>
 							<NavigationLink href='/'>About</NavigationLink>
+						</li>
+						<li>
+							<NavigationLink href='/'>Blog</NavigationLink>
 						</li>
 						<li>
 							<NavigationLink href='/'>Docs</NavigationLink>
@@ -25,7 +25,7 @@ export const Navigation = () => {
 					</ul>
 					<Link
 						href='/#contact'
-						className='by-primaryBlue rounded-md px-2 py-10 text-base leading-normal text-white'
+						className='rounded-md bg-primaryBlue px-10 py-2 text-base leading-normal text-white hover:opacity-85'
 					>
 						Get Involved
 					</Link>

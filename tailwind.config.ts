@@ -15,6 +15,9 @@ const config: Config = {
 				primaryBlue: {
 					DEFAULT: '#44A2FF',
 				},
+				lightBlack: {
+					DEFAULT: '##4A4A4A',
+				},
 			},
 		},
 	},
