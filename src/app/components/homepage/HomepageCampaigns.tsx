@@ -1,57 +1,85 @@
 import Image from 'next/image';
 
 import Container from '@/app/components/Container';
+import Link from 'next/link';
 
 export const HomepageCampaigns = () => {
 	return (
-		<div>
+		<div className='py-24'>
 			<Container className='relative'>
-				<div className='bg-lightBlue rounded-[13px] py-32 text-center'>
-					<h2 className='mb-24 text-4xl font-medium leading-normal text-primaryBlack'>
-						Where do we Help
-					</h2>
-					<div className='flex- flex flex-row flex-wrap justify-center px-10'>
-						<div className='flex w-full flex-col items-center justify-center gap-8 px-8 lg:w-1/3'>
-							<Image
-								src='/images/we-help/grants.svg'
-								width={200}
-								height={200}
-								alt='Grants management image'
-							/>
-							<h3 className='text-[28px] text-black'>Grants management</h3>
-							<p>
-								Digitalise and speed up your grant process, decrease
-								administrative burden, involve citizens in decision-making,
-								increase transparency and accountability of your grant programs.
-							</p>
+				<h2 className='mb-8 text-center text-4xl font-medium leading-10 text-primaryBlack'>
+					Campaigns
+				</h2>
+				<div className='flex items-center justify-between px-8 py-12'>
+					<div
+						className='flex w-full flex-col rounded-[13px] p-12 pr-[22%] lg:w-[47%]'
+						style={{
+							backgroundImage: 'url(/images/campaigns/zazelenimo-bg.png)',
+							backgroundSize: '100% 100%',
+							backgroundPosition: 'center',
+							backgroundRepeat: 'no-repeat',
+						}}
+					>
+						<h4 className='mb-4 text-[13px] font-bold uppercase text-[#69E39C]'>
+							In progress
+						</h4>
+						<Image
+							src='/images/campaigns/zazelenimo-logo.svg'
+							width={221}
+							height={35}
+							alt='Zazelenimo logo'
+							className='mb-6'
+						/>
+						<p className='mb-16 pr-10 text-base text-white'>
+							Quadratic funding based participatory budgeting for small scale
+							interventions into urban green spaces.
+						</p>
+						<div className='mt-auto'>
+							<Link
+								href='https://zazelenimo.com'
+								target='_blank'
+								className='mr-4 rounded-md bg-white px-5 py-2 text-base text-black hover:opacity-85'
+							>
+								Visit website
+							</Link>
+							<Link
+								href='https://github.com/muqa-org/demo'
+								target='_blank'
+								className='rounded-md bg-[#CBE3D6] px-5 py-2 text-base text-black hover:opacity-85'
+							>
+								Visit Github
+							</Link>
 						</div>
-						<div className='flex w-full flex-col items-center justify-center gap-8 px-8 lg:w-1/3'>
-							<Image
-								src='/images/we-help/participatory.svg'
-								width={200}
-								height={200}
-								alt='Participatory budgeting image'
-							/>
-							<h3 className='text-[28px] text-black'>Participatory budgeting</h3>
-							<p>
-								Increase citizen engagement, streamline proposal design process,
-								increase transparency and raise additional funding from citizens
-								for your participatory budgeting campaigns.
-							</p>
-						</div>
-						<div className='flex w-full flex-col items-center justify-center gap-8 px-8 lg:w-1/3'>
-							<Image
-								src='/images/we-help/digital.svg'
-								width={200}
-								height={200}
-								alt='Digital democracy image'
-							/>
-							<h3 className='text-[28px] text-black'>Digital democracy</h3>
-							<p>
-								Decrease the costs and velocity of democratic elections, create
-								democratic communities of various sizes, be flexible in
-								decision-making design with our software tools.
-							</p>
+					</div>
+					<div
+						className='flex h-full w-full flex-col rounded-[13px] bg-white p-12 pr-[22%] drop-shadow-lg lg:w-[47%]'
+						style={{
+							backgroundImage: 'url(/images/campaigns/hnd-bg.svg)',
+							backgroundSize: 'cover',
+							backgroundPosition: 'center',
+						}}
+					>
+						<h4 className='mb-4 text-[13px] font-bold uppercase text-primaryBlue'>
+							UPCOMING
+						</h4>
+						<Image
+							src='/images/campaigns/founding-logo.png'
+							width={326}
+							height={51}
+							alt='Founding Journalism logo'
+							className='relative mb-6 ml-[-8px]'
+						/>
+						<p className='mb-20 pr-10 text-base text-black'>
+							Quadratic funding based grant program for good journalism
+						</p>
+						<div className='mt-auto'>
+							<Link
+								href='#'
+								target='_blank'
+								className='mr-4 rounded-md bg-black px-5 py-2 text-base text-white hover:opacity-85'
+							>
+								Learn more
+							</Link>
 						</div>
 					</div>
 				</div>
