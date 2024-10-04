@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const HomepageCampaigns = () => {
 	return (
-		<div className='py-24'>
+		<div className='pb-16 pt-24'>
 			<Container className='relative'>
 				<h2 className='mb-8 text-center text-4xl font-medium leading-10 text-primaryBlack'>
 					Campaigns
