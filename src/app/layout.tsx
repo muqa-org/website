@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
 import './globals.css';
 import { Navigation } from '@/app/components/navigation/Navigation';
+import { Footer } from '@/app/components/Footer';
 
 export const metadata: Metadata = {
 	title: 'MUQA',
@@ -25,6 +26,7 @@ export default function RootLayout({
 			<body className={`${dmSans.variable} antialiased`}>
 				<Navigation />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
