@@ -4,14 +4,14 @@ import Container from '@/app/components/Container';
 
 export const HomepageStatements = () => {
 	return (
-		<div className='pb-16 pt-24'>
+		<div className='pb-16 pt-2 md:pt-24'>
 			<Container>
-				<div className='px-16'>
-					<h2 className='mb-8 text-center text-4xl font-medium leading-10 text-primaryBlack'>
+				<div className='md:px-16'>
+					<h2 className='mb-8 text-center text-3xl font-medium leading-10 text-primaryBlack md:text-4xl'>
 						Statements
 					</h2>
-					<div className='flex justify-between px-8 py-12'>
-						<div className='flex w-[30%] flex-1 flex-col items-center text-center'>
+					<div className='flex flex-wrap justify-between py-12 md:px-8'>
+						<div className='flex w-full flex-1 flex-col items-center text-center md:w-[30%]'>
 							<Image
 								src='/images/statements/ivica.png'
 								width={144}
@@ -28,16 +28,16 @@ export const HomepageStatements = () => {
 								Ivica Puljak, Mayor of Split
 							</h3>
 						</div>
-						<div className='w-[5%] text-center'>
+						<div className='w-full text-center md:w-[5%]'>
 							<Image
 								src='/images/statements/icon-quote.svg'
 								width={82}
 								height={82}
 								alt='Quote icon'
-								className='mt-9'
+								className='mb:mb-0 mb-9 mt-9 inline-block'
 							/>
 						</div>
-						<div className='flex w-[30%] flex-1 flex-col items-center text-center'>
+						<div className='flex w-full flex-1 flex-col items-center text-center md:w-[30%]'>
 							<Image
 								src='/images/statements/audrey.png'
 								width={144}
@@ -54,13 +54,13 @@ export const HomepageStatements = () => {
 								Audrey Tang, the first digital minister of Taiwan
 							</h3>
 						</div>
-						<div className='w-[5%] text-center'>
+						<div className='w-full text-center md:w-[5%]'>
 							<Image
 								src='/images/statements/icon-quote.svg'
 								width={82}
 								height={82}
 								alt='Quote icon'
-								className='mt-9'
+								className='mb:mb-0 mb-9 mt-9 inline-block'
 							/>
 						</div>
 						<div className='flex w-[30%] flex-1 flex-col items-center text-center'>

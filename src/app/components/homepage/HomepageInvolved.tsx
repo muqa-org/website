@@ -38,13 +38,13 @@ export const HomepageInvolved = () => {
 	}, [state]);
 
 	return (
-		<div className='pb-16 pt-10'>
+		<div id='contact' className='pb-16 md:pt-10'>
 			<Container>
-				<div className='px-8'>
-					<h2 className='mb-20 text-center text-4xl font-medium leading-10 text-primaryBlack'>
+				<div className='md:px-8'>
+					<h2 className='mb-20 text-center text-3xl font-medium leading-10 text-primaryBlack md:text-4xl'>
 						Get Involved
 					</h2>
-					<div className='relative rounded-[13px] rounded-bl-none bg-[#E8F7FB] px-10 py-9'>
+					<div className='relative rounded-[13px] rounded-bl-none bg-[#E8F7FB] px-6 pt-6 md:px-10 md:py-9'>
 						{/* Success message */}
 						{successMessage && (
 							<div className='mb-4 text-center text-green-500'>
@@ -56,7 +56,7 @@ export const HomepageInvolved = () => {
 							action={formAction}
 							className='flex flex-row flex-wrap justify-between'
 						>
-							<div className='w-[48%]'>
+							<div className='mb-6 w-full md:mb-0 md:w-[48%]'>
 								<textarea
 									id='mail-message'
 									name='mail-message'
@@ -69,11 +69,11 @@ export const HomepageInvolved = () => {
 									</div>
 								)}
 							</div>
-							<div className='flex w-[48%] flex-col'>
+							<div className='flex w-full flex-col md:w-[48%]'>
 								<input
 									id='email'
 									name='email'
-									className='w-full rounded-md bg-white p-4 text-base text-black placeholder-gray-600'
+									className='mb-6 w-full rounded-md bg-white p-4 text-base text-black placeholder-gray-600 md:mb-0'
 									placeholder='Email'
 								/>
 								{getErrorMessage(state.message, 'email') && (
@@ -93,7 +93,7 @@ export const HomepageInvolved = () => {
 									</div>
 								)}
 							</div>
-							<div className='w-full pl-4 pt-8'>
+							<div className='w-full pb-6 pt-8 md:pb-0 md:pl-4'>
 								<InvolvedFormButton />
 							</div>
 						</form>

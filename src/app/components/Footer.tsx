@@ -7,10 +7,10 @@ import Link from 'next/link';
 
 export const Footer = () => {
 	return (
-		<div className='pb-16 pt-24'>
+		<div className='pb-16 pt-6 md:pt-24'>
 			<Container>
 				<div className='flex flex-row flex-wrap items-center justify-between'>
-					<div className='flex items-center'>
+					<div className='mb-10 flex w-full items-center justify-center md:mb-0 md:w-auto md:justify-start'>
 						<Link href='/'>
 							<Image
 								src='/images/logo-footer.png'
@@ -26,16 +26,16 @@ export const Footer = () => {
 							muqa.org
 						</Link>
 					</div>
-					<ul className='flex items-center mr-10'>
-						<li>
+					<ul className='flex w-full flex-col items-center md:mr-10 md:w-auto md:flex-row'>
+						<li className='mb-4 md:mb-0'>
 							<Link
 								href='/'
-								className='px-8 text-sm font-bold uppercase text-primaryBlack hover:text-primaryBlue'
+								className='text-sm font-bold uppercase text-primaryBlack hover:text-primaryBlue md:px-8'
 							>
 								About
 							</Link>
 						</li>
-						<li>
+						<li className='mb-4 md:mb-0'>
 							<Link
 								href='/'
 								className='px-8 text-sm font-bold uppercase text-primaryBlack hover:text-primaryBlue'
@@ -43,7 +43,7 @@ export const Footer = () => {
 								Blog
 							</Link>
 						</li>
-						<li>
+						<li className='mb-4 md:mb-0'>
 							<Link
 								href='/'
 								className='px-8 text-sm font-bold uppercase text-primaryBlack hover:text-primaryBlue'
@@ -52,7 +52,7 @@ export const Footer = () => {
 							</Link>
 						</li>
 					</ul>
-					<div className='flex items-center'>
+					<div className='flex w-full items-center justify-center pt-10 md:w-auto md:justify-start md:pt-0'>
 						<Link href='/' className='hover:opacity-85'>
 							<Image
 								src='/images/icons/icon-telegram.svg'
@@ -61,7 +61,7 @@ export const Footer = () => {
 								alt='Telegram Icon'
 							/>
 						</Link>
-						<Link href='/' className='ml-8 hover:opacity-85'>
+						<Link href='/' className='ml-20 hover:opacity-85 md:ml-8'>
 							<Image
 								src='/images/icons/icon-github.svg'
 								width={25}

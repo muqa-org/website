@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 import Container from '@/app/components/Container';
@@ -7,12 +9,13 @@ export const HomepageCampaigns = () => {
 	return (
 		<div className='pb-16 pt-24'>
 			<Container className='relative'>
-				<h2 className='mb-8 text-center text-4xl font-medium leading-10 text-primaryBlack'>
+				<h2 className='mb-8 text-center text-3xl font-medium leading-10 text-primaryBlack md:text-4xl'>
 					Campaigns
 				</h2>
-				<div className='flex items-center justify-between px-8 py-12'>
+				<div className='flex flex-wrap items-center justify-between py-12 md:px-8'>
 					<div
-						className='flex w-full flex-col rounded-[13px] p-12 pr-[22%] lg:w-[47%]'
+						id='zazelenimo'
+						className='xl-pr-40 lg-mb-0 mb-10 flex w-full flex-col rounded-[13px] px-6 py-12 md:p-12 lg:w-[47%] 2xl:pr-[22%]'
 						style={{
 							backgroundImage: 'url(/images/campaigns/zazelenimo-bg.png)',
 							backgroundSize: '100% 100%',
@@ -20,6 +23,13 @@ export const HomepageCampaigns = () => {
 							backgroundRepeat: 'no-repeat',
 						}}
 					>
+						<Image
+							src='/images/partners/split-logo.svg'
+							width={68}
+							height={78}
+							alt='Split logo'
+							className='mb-6'
+						/>
 						<h4 className='mb-4 text-[13px] font-bold uppercase text-[#69E39C]'>
 							In progress
 						</h4>
@@ -52,13 +62,21 @@ export const HomepageCampaigns = () => {
 						</div>
 					</div>
 					<div
-						className='flex h-full w-full flex-col rounded-[13px] bg-white p-12 pr-[22%] drop-shadow-lg lg:w-[47%]'
+						id='hnd'
+						className='flex h-full w-full flex-col rounded-[13px] bg-white px-6 py-12 drop-shadow-lg md:p-12 md:pr-[22%] lg:w-[47%]'
 						style={{
 							backgroundImage: 'url(/images/campaigns/hnd-bg.svg)',
 							backgroundSize: 'cover',
 							backgroundPosition: 'center',
 						}}
 					>
+						<Image
+							src='/images/partners/hnd-logo.svg'
+							width={68}
+							height={78}
+							alt='HND logo'
+							className='mb-6'
+						/>
 						<h4 className='mb-4 text-[13px] font-bold uppercase text-primaryBlue'>
 							UPCOMING
 						</h4>
