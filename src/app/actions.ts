@@ -1,5 +1,7 @@
 'use server';
 
+import { sendMail } from '@/app/helpers/mailHelpers';
+
 type MessageType = {
 	key: string;
 	notice: string;
@@ -9,67 +11,24 @@ export async function involvedAction(
 	prevState: { status: boolean; message: MessageType[] | string[] },
 	formData: FormData,
 ) {
-	
-	const project = formData.get('project')?.toString().trim();
-	const location = formData.get('location')?.toString().trim() ?? '';
-	const description = formData.get('description')?.toString().trim() ?? '';
+	const mailMessage = formData.get('mail-message')?.toString().trim();
+	const email = formData.get('email')?.toString().trim() ?? '';
 	const name = formData.get('name')?.toString().trim() ?? '';
-	const publish = formData.get('publish')?.toString().trim() ?? '';
-		const email = formData.get('email')?.toString().trim() ?? '';
-	const mobile = formData.get('mobile')?.toString().trim() ?? '';
-	const futher = formData.get('futher')?.toString().trim() ?? '';
-	const terms = formData.get('terms')?.toString().trim() ?? '';
-	const privacy = formData.get('privacy')?.toString().trim() ?? '';
-	const allow = formData.get('allow')?.toString().trim() ?? '';
-
-	console.log({ publish });
 
 	// Validate each field and accumulate errors
 	const errors: MessageType[] = [];
 
-	// if (!project || project.length < 10) {
-	// 	errors.push({ key: 'project', notice: t('projectError') });
-	// }
+	if (!mailMessage || mailMessage.length < 10) {
+		errors.push({ key: 'mailMessage', notice: 'Mail message is required' });
+	}
 
-	// if (!location || location.length < 15) {
-	// 	errors.push({ key: 'location', notice: t('locationError') });
-	// }
+	if (!name || name.length < 2) {
+		errors.push({ key: 'name', notice: 'Name is required' });
+	}
 
-	// if (!description || description.length < 50) {
-	// 	errors.push({ key: 'description', notice: t('descriptionError') });
-	// }
-
-	// if (!name || name.length < 2) {
-	// 	errors.push({ key: 'name', notice: t('nameError') });
-	// }
-
-	// if (!email || !email.includes('@')) {
-	// 	errors.push({ key: 'email', notice: t('emailError') });
-	// }
-
-	// if (!mobile || mobile.length < 6) {
-	// 	errors.push({ key: 'mobile', notice: t('mobileError') });
-	// }
-
-	// if (!publish) {
-	// 	errors.push({ key: 'publish', notice: t('mobileError') });
-	// }
-
-	// if (!futher) {
-	// 	errors.push({ key: 'futher', notice: t('futherError') });
-	// }
-
-	// if (!terms) {
-	// 	errors.push({ key: 'terms', notice: t('termsError') });
-	// }
-
-	// if (!privacy) {
-	// 	errors.push({ key: 'privacy', notice: t('privacyError') });
-	// }
-
-	// if (!allow) {
-	// 	errors.push({ key: 'allow', notice: t('allowError') });
-	// }
+	if (!email || !email.includes('@')) {
+		errors.push({ key: 'email', notice: 'Email is required' });
+	}
 
 	// If there are any errors, return them
 	if (errors.length > 0) {
@@ -79,30 +38,38 @@ export async function involvedAction(
 		};
 	}
 
-	const responseTopic = {
-		ok: true,
-	};
+	const sendMailData = sendMail({
+		from: 'MUQA <postmaster@forum.zazelenimo.com>',
+		to: process.env.MAILGUN_TO_EMAIL || '',
+		subject: 'Message from MUQA',
+		html: `
+		<p>Name: ${name}</p>
+		<p>Email: ${email}</p>
+		<p>${mailMessage}</p>
+		`,
+	});
 
-	if (!responseTopic.ok) {
-		const errorText = await responseTopic.text();
-		console.error('Error creating topic:', errorText);
+	console.log({ sendMailData });
+
+	if (!sendMailData) {
 		return {
 			status: false,
 			message: [
 				{
-					key: 'topicCreation',
-					notice: `Failed to create topic: ${responseTopic.statusText}`,
+					key: 'error',
+					notice: 'Error sending mail',
 				},
 			],
 		};
 	} else {
-		const data = await responseTopic.json();
-
-		console.log('Topic created successfully:', data);
-
 		return {
 			status: true,
-			message: [{ key: 'success', notice: 'Project created successfully!' }],
+			message: [
+				{
+					key: 'success',
+					notice: 'Mail sent',
+				},
+			],
 		};
 	}
 }
