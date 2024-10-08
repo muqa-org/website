@@ -9,7 +9,7 @@ export default function NavigationLinks({ screen }: { screen: string }) {
 	return (
 		<ul className={ULClassName}>
 			<li>
-				<NavigationLink href='/'>About</NavigationLink>
+				<NavigationLink href='/about'>About</NavigationLink>
 			</li>
 			<li>
 				<NavigationLink href='/'>Blog</NavigationLink>
