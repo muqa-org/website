@@ -18,8 +18,8 @@ export const AboutStatements = () => {
 								height={200}
 								alt='Mission image'
 							/>
-							<h3 className='text-2xl text-black md:text-[28px]'>Mission</h3>
-							<p className='text-lightBlack'>
+							<h3 className='text-base text-lightBlack'>Mission</h3>
+							<p className='text-[28px] leading-[42px] text-black'>
 								Onboarding next billion to Ethereum, one city at a time.
 							</p>
 						</div>
@@ -30,8 +30,8 @@ export const AboutStatements = () => {
 								height={200}
 								alt='Vision image'
 							/>
-							<h3 className='text-2xl text-black md:text-[28px]'>Vision</h3>
-							<p className='text-lightBlack'>
+							<h3 className='text-base text-lightBlack'>Vision</h3>
+							<p className='text-[28px] leading-[42px] text-black'>
 								One billion people improve their communities through Ethereum
 							</p>
 						</div>
@@ -42,8 +42,8 @@ export const AboutStatements = () => {
 								height={200}
 								alt='Values image'
 							/>
-							<h3 className='text-2xl text-black md:text-[28px]'>Values</h3>
-							<p className='text-lightBlack'>
+							<h3 className='text-base text-lightBlack'>Values</h3>
+							<p className='text-[28px] leading-[42px] text-black'>
 								Sustainability, community, innovation, and collaboration
 							</p>
 						</div>
