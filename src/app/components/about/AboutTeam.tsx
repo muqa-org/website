@@ -11,8 +11,8 @@ export const AboutTeam = () => {
 				<h2 className='mb-24 text-center text-3xl font-medium leading-normal text-primaryBlack md:text-4xl'>
 					Team
 				</h2>
-				<div className='flex flex-row flex-wrap items-center justify-between px-40'>
-					<div className='mb-10 flex flex-col items-center justify-center'>
+				<div className='flex flex-row flex-wrap items-center justify-between xl:px-40'>
+					<div className='mb-28 flex w-full flex-col items-center justify-center md:w-auto'>
 						<Image
 							src='/images/about/tomislav.png'
 							width={144}
@@ -22,7 +22,7 @@ export const AboutTeam = () => {
 						/>
 						<h3 className='mb-2 text-xl text-black'>Tomislav Mamić</h3>
 						<h4 className='mb-7 text-base text-lightBlack'>Founder</h4>
-						<div className='flex w-full items-center justify-center pt-10 md:w-auto md:justify-start md:pt-0'>
+						<div className='flex w-full items-center justify-center pt-0 md:w-auto md:justify-start md:pt-10'>
 							<Link href='/' className='hover:opacity-85'>
 								<Image
 									src={icons.twitterIcon}
@@ -31,7 +31,7 @@ export const AboutTeam = () => {
 									alt='Twitter Icon'
 								/>
 							</Link>
-							<Link href='/' className='ml-20 hover:opacity-85 md:ml-8'>
+							<Link href='/' className='ml-4 hover:opacity-85 md:ml-8'>
 								<Image
 									src={icons.githubIcon}
 									width={20}
@@ -41,7 +41,7 @@ export const AboutTeam = () => {
 							</Link>
 						</div>
 					</div>
-					<div className='mb-10 flex flex-col items-center justify-center'>
+					<div className='mb-28 flex w-full flex-col items-center justify-center md:w-auto'>
 						<Image
 							src='/images/about/ante.png'
 							width={144}
@@ -51,7 +51,7 @@ export const AboutTeam = () => {
 						/>
 						<h3 className='mb-2 text-xl text-black'>Ante Borzić</h3>
 						<h4 className='mb-7 text-base text-lightBlack'>Lead engineer</h4>
-						<div className='flex w-full items-center justify-center pt-10 md:w-auto md:justify-start md:pt-0'>
+						<div className='flex w-full items-center justify-center pt-0 md:w-auto md:justify-start md:pt-10'>
 							<Link href='/' className='hover:opacity-85'>
 								<Image
 									src={icons.twitterIcon}
@@ -60,7 +60,7 @@ export const AboutTeam = () => {
 									alt='Twitter Icon'
 								/>
 							</Link>
-							<Link href='/' className='ml-20 hover:opacity-85 md:ml-8'>
+							<Link href='/' className='ml-4 hover:opacity-85 md:ml-8'>
 								<Image
 									src={icons.githubIcon}
 									width={20}
@@ -70,7 +70,7 @@ export const AboutTeam = () => {
 							</Link>
 						</div>
 					</div>
-					<div className='mb-10 flex flex-col items-center justify-center'>
+					<div className='mb-28 flex w-full flex-col items-center justify-center md:w-auto'>
 						<Image
 							src='/images/about/max.png'
 							width={144}
@@ -80,7 +80,7 @@ export const AboutTeam = () => {
 						/>
 						<h3 className='mb-2 text-xl text-black'>Max Semechuk</h3>
 						<h4 className='mb-7 text-base text-lightBlack'>Product Design</h4>
-						<div className='flex w-full items-center justify-center pt-10 md:w-auto md:justify-start md:pt-0'>
+						<div className='flex w-full items-center justify-center pt-0 md:w-auto md:justify-start md:pt-10'>
 							<Link href='/' className='hover:opacity-85'>
 								<Image
 									src={icons.twitterIcon}
@@ -89,7 +89,7 @@ export const AboutTeam = () => {
 									alt='Twitter Icon'
 								/>
 							</Link>
-							<Link href='/' className='ml-20 hover:opacity-85 md:ml-8'>
+							<Link href='/' className='ml-4 hover:opacity-85 md:ml-8'>
 								<Image
 									src={icons.githubIcon}
 									width={20}
@@ -99,7 +99,7 @@ export const AboutTeam = () => {
 							</Link>
 						</div>
 					</div>
-					<div className='mb-10 flex flex-col items-center justify-center'>
+					<div className='mb-28 flex w-full flex-col items-center justify-center md:w-auto'>
 						<Image
 							src='/images/about/kresimir.png'
 							width={144}
@@ -111,7 +111,7 @@ export const AboutTeam = () => {
 						<h4 className='mb-7 text-base text-lightBlack'>
 							Frontend developer
 						</h4>
-						<div className='flex w-full items-center justify-center pt-10 md:w-auto md:justify-start md:pt-0'>
+						<div className='flex w-full items-center justify-center pt-0 md:w-auto md:justify-start md:pt-10'>
 							<Link href='/' className='hover:opacity-85'>
 								<Image
 									src={icons.twitterIcon}
@@ -120,7 +120,7 @@ export const AboutTeam = () => {
 									alt='Twitter Icon'
 								/>
 							</Link>
-							<Link href='/' className='ml-20 hover:opacity-85 md:ml-8'>
+							<Link href='/' className='ml-4 hover:opacity-85 md:ml-8'>
 								<Image
 									src={icons.githubIcon}
 									width={20}

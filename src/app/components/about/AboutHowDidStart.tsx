@@ -4,8 +4,8 @@ export const AboutHowDidStart = () => {
 	return (
 		<div>
 			<Container className='relative'>
-				<div className='flex justify-between'>
-					<div className='w-[47%]'>
+				<div className='flex flex-wrap justify-between'>
+					<div className='w-full md:w-[47%]'>
 						<h3 className='mb-5 text-2xl font-medium text-primaryBlack'>
 							How did Muqa start?
 						</h3>
@@ -27,7 +27,7 @@ export const AboutHowDidStart = () => {
 							our progress in our blog, newsletter and github.
 						</p>
 					</div>
-					<div className='w-[47%]'>
+					<div className='mb-5 w-full md:mb-0 md:w-[47%]'>
 						<h3 className='mb-5 text-2xl font-medium text-primaryBlack'>
 							What are our future plans?
 						</h3>

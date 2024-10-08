@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const AboutCredits = () => {
 	return (
-		<div className='mb-40 mt-52'>
+		<div className='mb-20 mt-20 md:mb-40 md:mt-52'>
 			<Container className='relative'>
 				<h3 className='mb-5 text-2xl font-medium text-primaryBlack'>
 					Website credits
