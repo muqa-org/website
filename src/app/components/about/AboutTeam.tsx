@@ -62,7 +62,7 @@ export const AboutTeam = () => {
 						<div className='flex w-full items-center justify-center pt-0 md:w-auto md:justify-start md:pt-10'>
 							<Link
 								href='https://github.com/b0rza'
-								className='ml-4 hover:opacity-85 md:ml-8'
+								className='hover:opacity-85 md:ml-8'
 								target='_blank'
 							>
 								<Image
