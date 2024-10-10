@@ -82,10 +82,14 @@ export const AboutTeam = () => {
 							alt='Max Semechuk image'
 							className='mb-8'
 						/>
-						<h3 className='mb-2 text-xl text-black'>Max Semechuk</h3>
+						<h3 className='mb-2 text-xl text-black'>Max Semenchuk</h3>
 						<h4 className='mb-7 text-base text-lightBlack'>Product Design</h4>
 						<div className='flex w-full items-center justify-center pt-0 md:w-auto md:justify-start md:pt-10'>
-							<Link href='/' className='hover:opacity-85'>
+							<Link
+								href='https://x.com/maxsemenchuk'
+								className='hover:opacity-85'
+								target='_blank'
+							>
 								<Image
 									src={icons.twitterIcon}
 									width={20}
