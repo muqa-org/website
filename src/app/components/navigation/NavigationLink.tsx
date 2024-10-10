@@ -15,7 +15,7 @@ export default function NavigationLink({
 		<Link
 			href={href}
 			target={target}
-			className={`${className} text-primaryBlack hover:text-primaryBlue mx-12 inline-block text-[14px] font-bold uppercase leading-[150%]`}
+			className={`${className} inline-block text-lg font-bold uppercase leading-[150%] text-white hover:text-primaryBlue md:mx-4 md:text-[14px] md:text-primaryBlack lg:mx-12`}
 		>
 			{children}
 		</Link>
