@@ -1,3 +1,7 @@
 // link to contant form
-export const ContactFormLink =
-	'/#contact';
+export const contactFormLink = '/#contact';
+
+export const blogLink =
+	'https://muqa.notion.site/8d0caefe0d094ef7b1a3d0bd5bbde4f4?v=2743f0b08e3548e0a3e9e43bd185a2d1';
+
+export const docsLink = 'https://docs.muqa.org';

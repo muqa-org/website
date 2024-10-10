@@ -23,7 +23,11 @@ export const AboutTeam = () => {
 						<h3 className='mb-2 text-xl text-black'>Tomislav Mamić</h3>
 						<h4 className='mb-7 text-base text-lightBlack'>Founder</h4>
 						<div className='flex w-full items-center justify-center pt-0 md:w-auto md:justify-start md:pt-10'>
-							<Link href='/' className='hover:opacity-85'>
+							<Link
+								href='https://x.com/tomislavmamic'
+								className='hover:opacity-85'
+								target='_blank'
+							>
 								<Image
 									src={icons.twitterIcon}
 									width={20}
@@ -31,7 +35,11 @@ export const AboutTeam = () => {
 									alt='Twitter Icon'
 								/>
 							</Link>
-							<Link href='/' className='ml-4 hover:opacity-85 md:ml-8'>
+							<Link
+								href='https://github.com/tomislavmamic'
+								className='ml-4 hover:opacity-85 md:ml-8'
+								target='_blank'
+							>
 								<Image
 									src={icons.githubIcon}
 									width={20}
@@ -52,15 +60,11 @@ export const AboutTeam = () => {
 						<h3 className='mb-2 text-xl text-black'>Ante Borzić</h3>
 						<h4 className='mb-7 text-base text-lightBlack'>Lead engineer</h4>
 						<div className='flex w-full items-center justify-center pt-0 md:w-auto md:justify-start md:pt-10'>
-							<Link href='/' className='hover:opacity-85'>
-								<Image
-									src={icons.twitterIcon}
-									width={20}
-									height={18}
-									alt='Twitter Icon'
-								/>
-							</Link>
-							<Link href='/' className='ml-4 hover:opacity-85 md:ml-8'>
+							<Link
+								href='https://github.com/b0rza'
+								className='ml-4 hover:opacity-85 md:ml-8'
+								target='_blank'
+							>
 								<Image
 									src={icons.githubIcon}
 									width={20}
@@ -89,7 +93,11 @@ export const AboutTeam = () => {
 									alt='Twitter Icon'
 								/>
 							</Link>
-							<Link href='/' className='ml-4 hover:opacity-85 md:ml-8'>
+							<Link
+								href='https://github.com/MaxSemenchuk'
+								className='ml-4 hover:opacity-85 md:ml-8'
+								target='_blank'
+							>
 								<Image
 									src={icons.githubIcon}
 									width={20}
@@ -112,7 +120,11 @@ export const AboutTeam = () => {
 							Frontend developer
 						</h4>
 						<div className='flex w-full items-center justify-center pt-0 md:w-auto md:justify-start md:pt-10'>
-							<Link href='/' className='hover:opacity-85'>
+							<Link
+								href='https://x.com/Katusic'
+								className='hover:opacity-85'
+								target='_blank'
+							>
 								<Image
 									src={icons.twitterIcon}
 									width={20}
@@ -120,7 +132,11 @@ export const AboutTeam = () => {
 									alt='Twitter Icon'
 								/>
 							</Link>
-							<Link href='/' className='ml-4 hover:opacity-85 md:ml-8'>
+							<Link
+								href='https://github.com/kkatusic'
+								className='ml-4 hover:opacity-85 md:ml-8'
+								target='_blank'
+							>
 								<Image
 									src={icons.githubIcon}
 									width={20}

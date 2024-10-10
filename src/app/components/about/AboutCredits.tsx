@@ -10,12 +10,12 @@ export const AboutCredits = () => {
 				</h3>
 				<div className='mb-9 text-xl text-lightBlack'>
 					Video:{' '}
-					<Link href='/' target='_blank'>
+					<Link href='/' target='_blank' className='underline'>
 						Timelapse of people in public park
 					</Link>{' '}
 					<br />
 					Icons:{' '}
-					<Link href='/' target='_blank'>
+					<Link href='/' target='_blank' className='underline'>
 						New York
 					</Link>
 				</div>

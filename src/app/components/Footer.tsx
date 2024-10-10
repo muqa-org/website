@@ -2,8 +2,7 @@ import Image from 'next/image';
 
 import Container from '@/app/components/Container';
 import Link from 'next/link';
-
-///Users/kkatusic/Downloads/logo-footer.png
+import { blogLink, docsLink } from '@/app/config';
 
 export const Footer = () => {
 	return (
@@ -37,16 +36,18 @@ export const Footer = () => {
 						</li>
 						<li className='mb-4 md:mb-0'>
 							<Link
-								href='/'
+								href={blogLink}
 								className='px-8 text-sm font-bold uppercase text-primaryBlack hover:text-primaryBlue'
+								target='_blank'
 							>
 								Blog
 							</Link>
 						</li>
 						<li className='mb-4 md:mb-0'>
 							<Link
-								href='/'
+								href={docsLink}
 								className='px-8 text-sm font-bold uppercase text-primaryBlack hover:text-primaryBlue'
+								target='_blank'
 							>
 								Docs
 							</Link>

@@ -9,7 +9,7 @@ import Container from '@/app/components/Container';
 import NavigationLinks from '@/app/components/navigation/NavigationLinks';
 
 import icons from '@/app/commons/Icons';
-import { ContactFormLink } from '@/app/config';
+import { contactFormLink } from '@/app/config';
 
 export const Navigation = () => {
 	const router = useRouter();
@@ -21,7 +21,7 @@ export const Navigation = () => {
 
 	const handleInvolvedClick = () => {
 		setIsOpen(false);
-		router.push(ContactFormLink);
+		router.push(contactFormLink);
 	};
 
 	return (
@@ -43,7 +43,7 @@ export const Navigation = () => {
 						<NavigationLinks screen='desktop' />
 					</div>
 					<Link
-						href={ContactFormLink}
+						href={contactFormLink}
 						className='rounded-md bg-primaryBlue px-10 py-2 text-base leading-normal text-white hover:opacity-85'
 					>
 						Get Involved
