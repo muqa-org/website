@@ -23,7 +23,7 @@ export const AboutHowDidStart = () => {
 						</h3>
 						<p className='text-xl text-lightBlack'>
 							We are now in process of building our app for the pilot in City of
-							Split. The first campaign will run in Q3 of 2024. You can track
+							Split. The first campaign will run in Q4 of 2024. You can track
 							our progress in our blog, newsletter and github.
 						</p>
 					</div>
