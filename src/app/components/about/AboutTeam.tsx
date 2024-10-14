@@ -66,6 +66,18 @@ export const AboutTeam = () => {
 								target='_blank'
 							>
 								<Image
+									src={icons.linkedInIcon}
+									width={22}
+									height={22}
+									alt='LinkedIn Icon'
+								/>
+							</Link>
+							<Link
+								href='https://github.com/b0rza'
+								className='ml-4 hover:opacity-85 md:ml-8'
+								target='_blank'
+							>
+								<Image
 									src={icons.githubIcon}
 									width={20}
 									height={19}
