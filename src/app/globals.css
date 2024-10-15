@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 768px) {
+	#zazelenimo {
+		background: url('/images/campaigns/zazelenimo-bg-mobile.png') center center no-repeat !important;
+    background-size: cover !important;
+	}
+	#hnd {
+		background: url('/images/campaigns/hnd-bg-mobile.png') center center no-repeat !important;
+    background-size: cover !important;
+	}
+}
