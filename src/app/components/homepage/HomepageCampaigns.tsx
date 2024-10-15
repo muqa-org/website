@@ -15,7 +15,7 @@ export const HomepageCampaigns = () => {
 				<div className='flex flex-wrap items-center justify-between py-12 md:px-8'>
 					<div
 						id='zazelenimo'
-						className='xl-pr-40 lg-mb-0 mb-10 flex w-full flex-col rounded-[13px] px-6 py-12 md:p-12 lg:w-[47%] 2xl:pr-[22%]'
+						className='mb-10 flex w-full flex-col rounded-[13px] px-6 py-12 md:px-12 md:py-[60px] lg:mb-0 lg:w-[47%] xl:pr-40 2xl:pr-[22%]'
 						style={{
 							backgroundImage: 'url(/images/campaigns/zazelenimo-bg.png)',
 							backgroundSize: '100% 100%',
@@ -28,7 +28,7 @@ export const HomepageCampaigns = () => {
 							width={68}
 							height={78}
 							alt='Split logo'
-							className='mb-6'
+							className='mb-6 md:hidden'
 						/>
 						<h4 className='mb-4 text-[13px] font-bold uppercase text-[#69E39C]'>
 							In progress
@@ -63,7 +63,7 @@ export const HomepageCampaigns = () => {
 					</div>
 					<div
 						id='hnd'
-						className='flex h-full w-full flex-col rounded-[13px] bg-white px-6 py-12 drop-shadow-lg md:p-12 md:pr-[22%] lg:w-[47%]'
+						className='flex h-full w-full flex-col rounded-[13px] bg-white px-6 py-12 drop-shadow-lg md:p-10 md:pr-[22%] lg:w-[47%]'
 						style={{
 							backgroundImage: 'url(/images/campaigns/hnd-bg.svg)',
 							backgroundSize: 'cover',
@@ -75,7 +75,7 @@ export const HomepageCampaigns = () => {
 							width={68}
 							height={78}
 							alt='HND logo'
-							className='mb-6'
+							className='mb-6 md:hidden'
 						/>
 						<h4 className='mb-4 text-[13px] font-bold uppercase text-primaryBlue'>
 							UPCOMING

@@ -4,6 +4,7 @@ const icons = {
 	twitterIcon: '/images/icons/icon-twitter.svg',
 	githubIcon: '/images/icons/icon-github.svg',
 	linkedInIcon: '/images/icons/icon-linkedin.svg',
+	telegramIcon: '/images/icons/icon-telegram.svg',
 	telegramWhiteIcon: '/images/icons/icon-telegram-white.svg',
 	githubWhiteIcon: '/images/icons/icon-github-white.svg',
 };

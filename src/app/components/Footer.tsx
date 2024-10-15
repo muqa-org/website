@@ -2,7 +2,8 @@ import Image from 'next/image';
 
 import Container from '@/app/components/Container';
 import Link from 'next/link';
-import { blogLink, docsLink } from '@/app/config';
+import { blogLink, docsLink, githubLink, telegramLink, twitterLink } from '@/app/config';
+import icons from '@/app/commons/Icons';
 
 export const Footer = () => {
 	return (
@@ -54,20 +55,28 @@ export const Footer = () => {
 						</li>
 					</ul>
 					<div className='flex w-full items-center justify-center pt-10 md:w-auto md:justify-start md:pt-0'>
-						<Link href='/' className='hover:opacity-85'>
+						<Link href={telegramLink} className='hover:opacity-85'>
 							<Image
-								src='/images/icons/icon-telegram.svg'
+								src={icons.telegramIcon}
 								width={25}
 								height={20}
 								alt='Telegram Icon'
 							/>
 						</Link>
-						<Link href='/' className='ml-20 hover:opacity-85 md:ml-8'>
+						<Link href={githubLink} className='ml-20 hover:opacity-85 md:ml-8'>
 							<Image
-								src='/images/icons/icon-github.svg'
+								src={icons.githubIcon}
 								width={25}
 								height={25}
 								alt='Github Icon'
+							/>
+						</Link>
+						<Link href={twitterLink} className='ml-20 hover:opacity-85 md:ml-8'>
+							<Image
+								src={icons.twitterIcon}
+								width={25}
+								height={25}
+								alt='Twitter Icon'
 							/>
 						</Link>
 					</div>
