@@ -12,9 +12,9 @@ export const HomepageTogether = () => {
 				<div className='flex flex-row flex-wrap items-center justify-center gap-0 py-12 md:gap-10'>
 					<div className='mb-6 w-1/2 text-center md:mb-0 md:w-auto'>
 						<Image
-							src='/images/partners/ef-logo.svg'
+							src='/images/partners/ef-logo.png'
 							width={165}
-							height={88}
+							height={62}
 							alt='Etherium Foundation logo'
 							className='inline-block'
 						/>
