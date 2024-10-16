@@ -7,6 +7,7 @@ const icons = {
 	telegramIcon: '/images/icons/icon-telegram.svg',
 	telegramWhiteIcon: '/images/icons/icon-telegram-white.svg',
 	githubWhiteIcon: '/images/icons/icon-github-white.svg',
+	xWhiteIcon: '/images/icons/icon-x-white.svg',
 };
 
 export default icons;

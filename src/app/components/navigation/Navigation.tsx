@@ -9,7 +9,12 @@ import Container from '@/app/components/Container';
 import NavigationLinks from '@/app/components/navigation/NavigationLinks';
 
 import icons from '@/app/commons/Icons';
-import { contactFormLink, githubLink, telegramLink } from '@/app/config';
+import {
+	contactFormLink,
+	githubLink,
+	telegramLink,
+	twitterLink,
+} from '@/app/config';
 
 export const Navigation = () => {
 	const router = useRouter();
@@ -73,7 +78,7 @@ export const Navigation = () => {
 							</button>
 						</div>
 						<div className='mt-auto flex items-center'>
-							<Link href={telegramLink} className='hover:opacity-85 mr-12'>
+							<Link href={telegramLink} className='mr-6 hover:opacity-85'>
 								<Image
 									src={icons.telegramWhiteIcon}
 									width={25}
@@ -81,12 +86,20 @@ export const Navigation = () => {
 									alt='Telegram White Icon'
 								/>
 							</Link>
-							<Link href={githubLink} className='hover:opacity-85'>
+							<Link href={githubLink} className='mr-6 hover:opacity-85'>
 								<Image
 									src={icons.githubWhiteIcon}
 									width={25}
 									height={19}
 									alt='Github White Icon'
+								/>
+							</Link>
+							<Link href={twitterLink} className='hover:opacity-85'>
+								<Image
+									src={icons.xWhiteIcon}
+									width={25}
+									height={22}
+									alt='X White Icon'
 								/>
 							</Link>
 						</div>
