@@ -63,7 +63,7 @@ export const HomepageProjects = () => {
 					</div>
 					<div
 						id='hnd'
-						className='flex h-full w-full flex-col rounded-[13px] bg-white px-6 py-12 drop-shadow-lg md:px-12 md:py-16 md:pr-[22%] lg:w-[47%]'
+						className='flex h-full w-full flex-col rounded-[13px] bg-white px-6 py-12 drop-shadow-lg md:px-12 md:py-10 md:pr-[22%] lg:w-[47%] 2xl:py-16'
 						style={{
 							backgroundImage: 'url(/images/campaigns/hnd-bg.svg)',
 							backgroundSize: 'cover',
