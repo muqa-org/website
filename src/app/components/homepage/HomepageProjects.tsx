@@ -5,12 +5,12 @@ import Image from 'next/image';
 import Container from '@/app/components/Container';
 import Link from 'next/link';
 
-export const HomepageCampaigns = () => {
+export const HomepageProjects = () => {
 	return (
 		<div className='pb-16 pt-24'>
 			<Container className='relative'>
 				<h2 className='mb-8 text-center text-3xl font-medium leading-10 text-primaryBlack md:text-4xl'>
-					Campaigns
+					Projects
 				</h2>
 				<div className='flex flex-wrap items-center justify-between py-12 md:px-8'>
 					<div
@@ -63,7 +63,7 @@ export const HomepageCampaigns = () => {
 					</div>
 					<div
 						id='hnd'
-						className='flex h-full w-full flex-col rounded-[13px] bg-white px-6 py-12 drop-shadow-lg md:p-10 md:pr-[22%] lg:w-[47%]'
+						className='flex h-full w-full flex-col rounded-[13px] bg-white px-6 py-12 drop-shadow-lg md:px-12 md:py-16 md:pr-[22%] lg:w-[47%]'
 						style={{
 							backgroundImage: 'url(/images/campaigns/hnd-bg.svg)',
 							backgroundSize: 'cover',
