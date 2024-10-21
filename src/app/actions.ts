@@ -39,7 +39,7 @@ export async function involvedAction(
 	}
 
 	const sendMailData = sendMail({
-		from: 'MUQA <postmaster@forum.zazelenimo.com>',
+		from: `MUQA <postmaster@${process.env.MAILGUN_DOMAIN}>`,
 		to: process.env.MAILGUN_TO_EMAIL || '',
 		subject: 'Message from MUQA',
 		html: `
