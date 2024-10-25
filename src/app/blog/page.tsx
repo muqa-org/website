@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React from 'react';
 import { useQuery } from 'react-query';
 
@@ -27,11 +28,15 @@ export default function Blog() {
 		return <div>Error: {error.message}</div>;
 	}
 
+	console.log(data);
+
 	return (
 		<>
 			{data?.results?.map(result => (
 				<div key={result.id}>
+					<img src={result.cover?.file?.url} alt="" />
 					<h2>{result.properties.Name.title[0].plain_text}</h2>
+					<Link href={`/blog/${result.id}`}>View Details</Link>
 				</div>
 			))}
 		</>

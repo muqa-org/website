@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 
-import { fetchApplicationFormsData } from '@/app/helpers/notionHelper';
+import {
+	fetchApplicationFormsData,
+	fetchPages,
+} from '@/app/helpers/notionHelper';
 
 export async function GET() {
 	try {
