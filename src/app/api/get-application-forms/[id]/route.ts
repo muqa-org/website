@@ -12,7 +12,7 @@ export async function GET(
 	const { id } = await params;
 
 	try {
-		// Fetch page data (e.g., properties like title, group, etc.)
+		// First fetch page data
 		const pageData = await fetchApplicationFormsPageData(id);
 
 		console.log('Page data');
@@ -20,11 +20,12 @@ export async function GET(
 
 		// Fetch all blocks (content) of the page
 		const pageBlocks = await fetchAllPageBlocks(id);
+		// const pageBlocks = {};
 
 		// Combine both page data and blocks into one object
 		const combinedData = {
-			pageData, // Contains page-level information like title, properties, etc.
-			pageBlocks, // Contains all the blocks (paragraphs, headings, lists, etc.)
+			pageData,
+			pageBlocks,
 		};
 
 		// Return the combined data in the response
@@ -34,20 +35,14 @@ export async function GET(
 		});
 	} catch (error) {
 		console.error('Error fetching page data or blocks:', error);
-		return new Response(JSON.stringify({ error: 'Failed to fetch data' }), {
-			status: 500,
-			headers: { 'Content-Type': 'application/json' },
-		});
+		return new Response(
+			JSON.stringify({
+				error: 'Failed to fetch data for page and page blocks from Notion',
+			}),
+			{
+				status: 500,
+				headers: { 'Content-Type': 'application/json' },
+			},
+		);
 	}
-
-	// try {
-	// 	const data = await fetchApplicationFormsPageData(id);
-	// 	return Response.json(data, {
-	// 		status: 200,
-	// 	});
-	// } catch (error) {
-	// 	return new Response(error, {
-	// 		status: 500,
-	// 	});
-	// }
 }

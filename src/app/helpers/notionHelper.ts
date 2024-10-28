@@ -1,5 +1,13 @@
 import { notionAPIURL } from '@/app/config';
 
+/**
+ * Fetches data for the entire application forms database from Notion.
+ * Sends a POST request to the Notion API to query the specified database.
+ * Throws an error if the fetch operation fails.
+ *
+ * @returns {Promise<Object>} The JSON response containing the database data.
+ * @throws Will throw an error if the request fails.
+ */
 export async function fetchApplicationFormsData() {
 	const res = await fetch(
 		`${notionAPIURL}databases/8d0caefe-0d09-4ef7-b1a3-d0bd5bbde4f4/query`,
@@ -20,9 +28,17 @@ export async function fetchApplicationFormsData() {
 	return res.json();
 }
 
-export async function fetchApplicationFormsPageData(id: string) {
-	console.log({ id });
-	const res = await fetch(`${notionAPIURL}pages/${id}`, {
+/**
+ * Fetches data for a specific page within the application forms database.
+ * Sends a GET request to the Notion API to retrieve page details by ID.
+ * Throws an error if the fetch operation fails.
+ *
+ * @param {string} pageId - The unique identifier of the Notion page to fetch.
+ * @returns {Promise<Object>} The JSON response containing the page data.
+ * @throws Will throw an error if the request fails.
+ */
+export async function fetchApplicationFormsPageData(pageId: string) {
+	const res = await fetch(`${notionAPIURL}pages/${pageId}`, {
 		method: 'GET',
 		headers: {
 			Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
@@ -31,45 +47,35 @@ export async function fetchApplicationFormsPageData(id: string) {
 		},
 	});
 
-	console.log(res);
-
 	if (!res.ok) {
-		throw new Error('Failed to fetch data from Notion');
+		throw new Error('Failed to fetch data of the page from Notion');
 	}
 
 	return res.json();
 }
 
+/**
+ * Fetches all child blocks of a specific Notion page.
+ * Sends a GET request to the Notion API to retrieve all blocks within a page by page ID.
+ * Throws an error if the fetch operation fails.
+ *
+ * @param {string} pageId - The unique identifier of the Notion page whose blocks are to be fetched.
+ * @returns {Promise<Object>} The JSON response containing the page's child blocks.
+ * @throws Will throw an error if the request fails.
+ */
 export async function fetchAllPageBlocks(pageId: string) {
-	let blocks = [];
-	let cursor: string | null = null;
-	let hasMore = true;
+	const res = await fetch(`${notionAPIURL}blocks/${pageId}/children`, {
+		method: 'GET',
+		headers: {
+			Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
+			'Notion-Version': '2022-06-28',
+			'Content-Type': 'application/json',
+		},
+	});
 
-	while (hasMore) {
-		const res = await fetch(
-			// `${notionAPIURL}/v1/blocks/${pageId}/children?page_size=100${cursor ? `&start_cursor=${cursor}` : ''}`,
-			`${notionAPIURL}/v1/blocks/${pageId}/children?page_size=100`,
-			{
-				method: 'GET',
-				headers: {
-					Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
-					'Notion-Version': '2022-06-28',
-					'Content-Type': 'application/json',
-				},
-			},
-		);
-
-		const result = await res.json();
-
-		if (!res.ok) {
-			console.error('Error fetching page blocks:', result, pageId);
-			throw new Error('Failed to fetch page blocks');
-		}
-
-		blocks = [...blocks, ...result.results];
-		hasMore = result.has_more;
-		cursor = result.next_cursor;
+	if (!res.ok) {
+		throw new Error('Failed to fetch data of the blocks from Notion');
 	}
 
-	return blocks;
+	return res.json();
 }
