@@ -3,6 +3,7 @@ import { type NextRequest } from 'next/server';
 import {
 	fetchApplicationFormsPageData,
 	fetchAllPageBlocks,
+	fetchApplicationFormsData,
 } from '@/app/helpers/notionHelper';
 
 export async function GET(
@@ -15,12 +16,17 @@ export async function GET(
 		// First fetch page data
 		const pageData = await fetchApplicationFormsPageData(id);
 
-		console.log('Page data');
-		console.log({ pageData });
-
 		// Fetch all blocks (content) of the page
 		const pageBlocks = await fetchAllPageBlocks(id);
-		// const pageBlocks = {};
+
+		// Check if block contains a child database
+		for (const block of pageBlocks.results) {
+			if (block && block.type === 'child_database') {
+				if (block.id) {
+					block.child_database_data = await fetchApplicationFormsData(block.id);
+				}
+			}
+		}
 
 		// Combine both page data and blocks into one object
 		const combinedData = {

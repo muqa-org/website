@@ -5,21 +5,19 @@ import { notionAPIURL } from '@/app/config';
  * Sends a POST request to the Notion API to query the specified database.
  * Throws an error if the fetch operation fails.
  *
+ * @param {string} pageId - The unique identifier of the Notion page to fetch.
  * @returns {Promise<Object>} The JSON response containing the database data.
  * @throws Will throw an error if the request fails.
  */
-export async function fetchApplicationFormsData() {
-	const res = await fetch(
-		`${notionAPIURL}databases/8d0caefe-0d09-4ef7-b1a3-d0bd5bbde4f4/query`,
-		{
-			method: 'POST',
-			headers: {
-				Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
-				'Notion-Version': '2022-06-28',
-				'Content-Type': 'application/json',
-			},
+export async function fetchApplicationFormsData(pageId: string) {
+	const res = await fetch(`${notionAPIURL}databases/${pageId}/query`, {
+		method: 'POST',
+		headers: {
+			Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
+			'Notion-Version': '2022-06-28',
+			'Content-Type': 'application/json',
 		},
-	);
+	});
 
 	if (!res.ok) {
 		throw new Error('Failed to fetch data from Notion');
