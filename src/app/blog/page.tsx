@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import { useQuery } from 'react-query';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 import { generateSlug } from '@/app/helpers/commons';
 import Container from '@/app/components/Container';
@@ -39,12 +40,18 @@ export default function Blog() {
 	);
 
 	if (isLoading) {
-		return <div>Loading...</div>;
+		return (
+			<div className='flex h-96 w-full flex-row items-center justify-center'>
+				<span>Loading...</span>
+			</div>
+		);
 	}
 
 	if (error) {
 		const errorMessage = (error as Error).message;
-		console.log(errorMessage);
+		console.error(errorMessage);
+
+		notFound();
 	}
 
 	return (

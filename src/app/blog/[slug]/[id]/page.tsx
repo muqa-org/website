@@ -6,10 +6,46 @@ import Image from 'next/image';
 
 import Container from '@/app/components/Container';
 import RenderNotionTableList from '@/app/components/notionRenders/RenderNotionTableList';
+import RenderNotionHeading1 from '@/app/components/notionRenders/RenderNotionHeading1';
+import RenderNotionHeading2 from '@/app/components/notionRenders/RenderNotionHeading2';
+import RenderNotionHeading3 from '@/app/components/notionRenders/RenderNotionHeading3';
+import RenderNotionParagraphs from '@/app/components/notionRenders/RenderNotionParagraphs';
+import RenderNotionParagraph from '@/app/components/notionRenders/RenderNotionParagraph';
+import RenderNotionImage from '@/app/components/notionRenders/RenderNotionImage';
 
 async function fetchPageDetails(id: string) {
 	const res = await fetch(`/api/get-application-forms/${id}`);
 	return res.json();
+}
+
+interface Result {
+	id: string;
+	type: string;
+	heading_1?: { rich_text: { text: { content: string } }[] };
+	heading_2?: { rich_text: { text: { content: string } }[] };
+	heading_3?: { rich_text: { text: { content: string } }[] };
+	paragraph?: {
+		rich_text: {
+			text: {
+				content: string;
+				link?: {
+					url: string;
+				};
+			};
+			annotations: {
+				bold: boolean;
+			};
+		}[];
+	};
+	image?: { file: { url: string } };
+	child_database_data?: { object: string; results: Result[] };
+	properties?: {
+		[key: string]: {
+			title: Array<{
+				plain_text: string;
+			}>;
+		};
+	};
 }
 
 export default function BlogPost({
@@ -18,8 +54,6 @@ export default function BlogPost({
 	params: { slug: string; id: string };
 }) {
 	const id = params.id; // Get the dynamic id from the URL
-
-	console.log(id);
 
 	const { data, error, isLoading } = useQuery(
 		['applicationForm', id],
@@ -30,7 +64,7 @@ export default function BlogPost({
 	if (isLoading) {
 		return (
 			<div className='flex h-96 w-full flex-row items-center justify-center'>
-				Loading...
+				<span>Loading...</span>
 			</div>
 		);
 	}
@@ -38,12 +72,9 @@ export default function BlogPost({
 	if (error) {
 		const errorMessage = (error as Error).message;
 		console.error(errorMessage);
-		notFound();
-		return null;
-	}
 
-	console.log(data);
-	console.log(data.pageBlocks);
+		notFound();
+	}
 
 	return (
 		<>
@@ -69,67 +100,60 @@ export default function BlogPost({
 				)}
 				<div className='md:mx-12'>
 					{data.pageBlocks &&
-						data.pageBlocks?.results.map(result => (
+						data.pageBlocks?.results.map((result: Result) => (
 							<div
 								key={result.id}
 								className={`${result.type === 'paragraph' ? 'mb-0' : 'mb-6'}`}
 							>
 								{result.type === 'heading_1' && (
-									<h2 className='mt-6 text-3xl font-bold'>
-										{result.heading_1.rich_text[0].text.content}
-									</h2>
+									<RenderNotionHeading1
+										heading={
+											result.heading_1?.rich_text[0]?.text?.content || ''
+										}
+									/>
 								)}
 								{result.type === 'heading_2' && (
-									<h3 className='mt-6 text-xl font-bold'>
-										{result.heading_2.rich_text[0].text.content}
-									</h3>
+									<RenderNotionHeading2
+										heading={
+											result.heading_1?.rich_text[0]?.text?.content || ''
+										}
+									/>
+								)}
+								{result.type === 'heading_3' && (
+									<RenderNotionHeading3
+										heading={
+											result.heading_1?.rich_text[0]?.text?.content || ''
+										}
+									/>
 								)}
 								{result.type === 'paragraph' &&
-								result.paragraph.rich_text.length > 1 ? (
-									<div className='mb-2'>
-										{result.paragraph.rich_text.map((text, idx) => (
-											<span
-												key={idx}
-												className={`text-base ${text.annotations.bold ? 'font-bold' : ''}`}
-											>
-												{text.text && text.text.link ? (
-													<a
-														href={text.text.link.url}
-														target='_blank'
-														rel='noopener noreferrer'
-														className='text-blue-500 underline'
-													>
-														{text.text.content}
-													</a>
-												) : (
-													<span>{text.text?.content}</span>
-												)}
-											</span>
-										))}
-									</div>
+								result.paragraph &&
+								result.paragraph.rich_text?.length > 1 ? (
+									<RenderNotionParagraphs
+										paragraphs={result.paragraph.rich_text}
+									/>
 								) : (
 									result.type === 'paragraph' && (
-										<p className='mb-3 text-base'>
-											{result.paragraph.rich_text[0]?.text?.content}
-										</p>
+										<RenderNotionParagraph
+											paragraph={
+												result.paragraph?.rich_text[0]?.text?.content || ''
+											}
+										/>
 									)
 								)}
 								{result.type === 'image' && (
-									<div className='mt-4'>
-										<Image
-											src={result.image.file.url}
-											alt=''
-											width={1300}
-											height={370}
-											className='he-full w-full rounded-md'
-										/>
-									</div>
+									<RenderNotionImage imageUrl={result.image?.file.url || ''} />
 								)}
 								{result.type === 'child_database' &&
 									result.child_database_data &&
 									result.child_database_data.object === 'list' && (
 										<RenderNotionTableList
-											tableData={result.child_database_data.results}
+											tableData={{
+												results: result.child_database_data.results.map(r => ({
+													...r,
+													properties: r.properties || {},
+												})),
+											}}
 										/>
 									)}
 							</div>

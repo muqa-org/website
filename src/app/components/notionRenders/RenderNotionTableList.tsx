@@ -21,16 +21,11 @@ export default function RenderNotionTableList({
 		return null;
 	}
 
-	console.log('tableData', tableData);
-
-	console.log('keys', tableData[0]);
-
 	// Fetch the first result's properties to use as headers, if available
 	const headers =
 		tableData && tableData.length > 0
 			? Object.keys(tableData[0].properties)
 			: [];
-	console.log({ headers });
 
 	if (headers.length === 0) {
 		return null;
@@ -88,7 +83,7 @@ export default function RenderNotionTableList({
 											<td key={key} className='py-2'>
 												{property.multi_select.length > 0
 													? property.multi_select
-															.map(option => option.name)
+															.map((option: { name: string }) => option.name)
 															.join(', ')
 													: ' '}
 											</td>
@@ -98,7 +93,7 @@ export default function RenderNotionTableList({
 										return (
 											<td key={key} className='py-2'>
 												{property.relation.length > 0
-													? property.relation.map(rel => rel.id).join(', ')
+													? property.relation.map((rel: { id: string }) => rel.id).join(', ')
 													: ' '}
 											</td>
 										);
