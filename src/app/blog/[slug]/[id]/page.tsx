@@ -53,7 +53,7 @@ export default function BlogPost({
 }: {
 	params: { slug: string; id: string };
 }) {
-	const id = params.id; // Get the dynamic id from the URL
+	const id = params.id;
 
 	const { data, error, isLoading } = useQuery(
 		['applicationForm', id],
